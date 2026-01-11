@@ -4,23 +4,35 @@
   "projects": {
     "referral-frontend": {
       "projectType": "application",
+      "root": "",
       "sourceRoot": "src",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/referral-frontend",
+            "outputPath": "dist/referral-frontend/browser",
             "index": "src/index.html",
-            "browser": "src/main.ts"
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "referral-frontend:build"
+            "browserTarget": "referral-frontend:build"
           }
         }
       }
     }
-  }
+  },
+  "defaultProject": "referral-frontend"
 }
