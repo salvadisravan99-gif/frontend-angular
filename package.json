@@ -1,11 +1,12 @@
 {
   "name": "referral-frontend",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build --configuration=production",
+    "build:dev": "ng build --configuration=development"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.0",
     "@angular/common": "^17.0.0",
